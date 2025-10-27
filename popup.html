@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍝 Emojipasta</h1>
+
+    <!-- Last Result Section -->
+    <div class="last-result-section" id="lastResultSection">
+      <div class="result-box" id="lastResult">No emojipasta generated yet.<br><br>Highlight text on any webpage, right-click, and select "Generate Emojipasta"</div>
+      <div class="result-actions" id="resultActions" style="display: none;">
+        <button class="action-btn" id="copyBtn">📋 Copy</button>
+        <button class="action-btn" id="readBtn">🔊 Read Aloud</button>
+      </div>
+    </div>
+
+    <!-- Settings Section (Collapsible) -->
+    <div class="settings-section">
+      <button class="settings-toggle" id="settingsToggle">
+        <span>⚙️ Settings</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="settings-content" id="settingsContent" style="display: none;">
+
+        <!-- API Key -->
+        <div class="setting-group">
+          <label for="apiKey">OpenAI API Key:</label>
+          <input type="password" id="apiKey" placeholder="sk-...">
+          <div id="apiKeyError" class="api-key-error" style="display: none;"></div>
+          <button id="saveApiKey" class="save-btn">Save API Key</button>
+          <p class="hint">Get your key from <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com/api-keys</a></p>
+        </div>
+
+        <!-- Model Selection -->
+        <div class="setting-group">
+          <label>Model:</label>
+          <div class="model-toggle">
+            <button class="model-btn active" id="modelMini" data-model="gpt-4o-mini">
+              <span class="model-name">4o-mini</span>
+              <span class="model-desc">⚡ Faster</span>
+            </button>
+            <button class="model-btn" id="model4o" data-model="gpt-4o">
+              <span class="model-name">4o</span>
+              <span class="model-desc">💎 Better</span>
+            </button>
+          </div>
+          <p class="hint cost-warning" id="costWarning" style="display: none;">⚠️ 4o costs ~20x more than 4o-mini</p>
+        </div>
+
+        <!-- Default Style -->
+        <div class="setting-group">
+          <label>Default Style:</label>
+          <div class="segmented-control">
+            <button class="segment-btn" data-level="0">🇺🇸</button>
+            <button class="segment-btn active" data-level="5">🔥😏</button>
+            <button class="segment-btn" data-level="10">🍆💦🫦</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <script src="constants.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

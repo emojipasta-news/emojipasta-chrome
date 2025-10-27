@@ -1,0 +1,274 @@
+/* content.css */
+
+.emojipasta-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 300px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.emojipasta-notification.error {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.emojipasta-notification.success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.emojipasta-notification.fade-out {
+  animation: fadeOut 0.3s ease-out;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Modal styles */
+.emojipasta-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.emojipasta-modal.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}
+
+.emojipasta-modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.emojipasta-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 2px solid #e0e0e0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.emojipasta-modal-header h3 {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.emojipasta-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.emojipasta-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.emojipasta-modal-body {
+  padding: 24px;
+}
+
+.emojipasta-result {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  border: 2px solid #e0e0e0;
+  min-height: 100px;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.emojipasta-result.generating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #667eea;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.emojipasta-modal-controls {
+  padding: 0 24px 16px 24px;
+}
+
+.emojipasta-vulgarity-control {
+  margin-bottom: 16px;
+}
+
+.emojipasta-vulgarity-control label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 14px;
+}
+
+.emojipasta-modal .segmented-control {
+  display: flex;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+}
+
+.emojipasta-modal .segment-btn {
+  flex: 1;
+  padding: 12px 12px;
+  font-size: 20px;
+  background: white;
+  border: none;
+  border-right: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.emojipasta-modal .segment-btn:last-child {
+  border-right: none;
+}
+
+.emojipasta-modal .segment-btn:hover {
+  background: #f5f5f5;
+}
+
+.emojipasta-modal .segment-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.emojipasta-modal .segment-btn.active:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+}
+
+.emojipasta-modal-actions {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px 24px 24px;
+}
+
+.emojipasta-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.emojipasta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.emojipasta-btn:active {
+  transform: translateY(0);
+}
+
+.emojipasta-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.emojipasta-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.emojipasta-btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 400px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Last Result Section */
+.last-result-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+}
+
+.result-box {
+  padding: 16px;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #333;
+}
+
+.result-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+/* Settings Section */
+.settings-section {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.settings-toggle {
+  width: 100%;
+  padding: 14px 16px;
+  background: white;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  transition: background 0.2s;
+}
+
+.settings-toggle:hover {
+  background: #f5f5f5;
+}
+
+.toggle-arrow {
+  transition: transform 0.3s;
+  font-size: 12px;
+}
+
+.toggle-arrow.open {
+  transform: rotate(180deg);
+}
+
+.settings-content {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.setting-group {
+  margin-bottom: 20px;
+}
+
+.setting-group:last-child {
+  margin-bottom: 0;
+}
+
+.setting-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* API Key Input */
+input[type="password"], input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: border-color 0.3s;
+}
+
+input[type="password"]:focus, input[type="text"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+input[type="password"].invalid, input[type="text"].invalid {
+  border-color: #dc3545;
+}
+
+.api-key-error {
+  font-size: 12px;
+  color: #dc3545;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  padding: 5px 8px;
+  background: #f8d7da;
+  border-radius: 4px;
+  border-left: 3px solid #dc3545;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 8px;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.save-btn:active {
+  transform: translateY(0);
+}
+
+/* Model Toggle */
+.model-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.model-btn {
+  flex: 1;
+  padding: 12px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.model-btn:hover {
+  border-color: #667eea;
+  background: #f5f5f5;
+}
+
+.model-btn.active {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.model-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.model-desc {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* Segmented Control (Style Buttons) */
+.segmented-control {
+  display: flex;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+}
+
+.segment-btn {
+  flex: 1;
+  padding: 12px 12px;
+  font-size: 20px;
+  background: white;
+  border: none;
+  border-right: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.segment-btn:last-child {
+  border-right: none;
+}
+
+.segment-btn:hover {
+  background: #f5f5f5;
+}
+
+.segment-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.segment-btn.active:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+}
+
+/* Hints */
+.hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.hint a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.hint.cost-warning {
+  color: #f57c00;
+  padding: 8px 12px;
+  background: #fff3e0;
+  border-radius: 5px;
+  border-left: 3px solid #f57c00;
+  margin-top: 8px;
+}

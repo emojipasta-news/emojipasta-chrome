@@ -1,0 +1,28 @@
+# API keys and secrets (should never be committed)
+.env
+secrets.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if we add build tools later)
+node_modules/
+
+# Distribution files
+dist/
+build/
+*.zip
+
+# Test files
+coverage/
+.nyc_output/
+docs/plans/
+docs/test-results.md
